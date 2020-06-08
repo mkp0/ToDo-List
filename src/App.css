@@ -18,21 +18,40 @@
   min-height: 20rem;
   background-color: white;
   min-width: 18rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   border-radius: 2rem;
   overflow-y: auto;
+}
+
+h1{
+    background-color: rgb(60, 57, 85);
+    text-align: center;
+    color: rgb(172, 174, 175);
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-div input,.center-div button {
   text-align: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  margin : 1rem 0;
 }
 
 li{
   font-weight: 500;
-  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+li .remove {
+  background-color: rgb(173, 105, 105);
+  padding: 0.3rem 0.6rem;
+  border-radius: 30%;
+  font-weight: 900;
 }
