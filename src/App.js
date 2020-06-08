@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import './App.css'
+export default function App() {
 
-function App() {
+  const [input,setInput] = useState("")
+  const [arr,setArr] = useState([])
+
+  const itemEvent = (event) => {
+    setInput(event.target.value);
+    
+  }
+
+  const listOfitem = () => {
+    arr.push(input)
+    setInput('')
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <div className="main-div">
+        <div className='center-div'>
+          <h1>To do List</h1>
+          <div>
+          <input type = 'text' placeholder='Add a items' onChange={itemEvent} value={input} />
+          
 
-export default App;
+          <button  onClick={listOfitem} >+</button>
+          </div>
+
+          <ol>
+              {arr.map(
+                (a,b)=>{
+                  return (<li>{a}</li>)
+
+                }
+              )}          
+          </ol>
+
+        </div>
+      </div>
+    </>
+  )
+}
